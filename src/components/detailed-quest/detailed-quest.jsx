@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { MainLayout } from 'components/common/common';
 import { ReactComponent as IconClock } from 'assets/img/icon-clock.svg';
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
@@ -7,48 +8,13 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
 import { DifficultyLevel, TypeQuest } from 'const';
-
-const mockData = [
-  {
-    "id": 1,
-    "title": "Склеп",
-    "description": "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
-    "previewImg": "img/preview-sklep.jpg",
-    "coverImg": "img/cover-sklep.jpg",
-    "type": "horror",
-    "level": "hard",
-    "peopleCount": [2, 5],
-    "duration": 120
-  },
-  {
-    "id": 2,
-    "title": "Маньяк",
-    "description": "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
-    "previewImg": "img/preview-maniac.jpg",
-    "coverImg": "img/cover-maniac.jpg",
-    "type": "horror",
-    "level": "medium",
-    "peopleCount": [3, 6],
-    "duration": 90
-  },
-  {
-    "id": 3,
-    "title": "Ритуал",
-    "description": "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
-    "previewImg": "img/preview-ritual.jpg",
-    "coverImg": "img/cover-ritual.jpg",
-    "type": "mystic",
-    "level": "easy",
-    "peopleCount": [3, 5],
-    "duration": 120
-  },
-];
-
+import { getData } from 'store/selectors';
 
 const DetailedQuest = () => {
+  const {questList} = useSelector(getData);
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
   const pageId = Number(useParams().id);
-  const quest = mockData.find((quest) => quest.id === pageId);
+  const quest = questList.find((quest) => quest.id === pageId);
 
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
