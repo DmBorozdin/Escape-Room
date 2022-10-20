@@ -9,7 +9,9 @@ const Tabs = () => {
   const dispatch = useDispatch();
 
   const onTabBtnClick = (evt) => {
-    dispatch(changeType(evt.target.dataset.type));
+    if (evt.currentTarget.tagName === 'BUTTON') {
+      dispatch(changeType(evt.currentTarget.dataset.type));
+    }
   }
 
   return (

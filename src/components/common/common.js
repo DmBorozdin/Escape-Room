@@ -1,6 +1,6 @@
 export { Link, Switch, Route, Router, useParams } from 'react-router-dom';
 export { Provider, useSelector, useDispatch } from 'react-redux';
-export { configureStore, createReducer, createAction } from '@reduxjs/toolkit';
+export { configureStore, createReducer, createAction} from '@reduxjs/toolkit';
 export { default as Button } from './button/button';
 export { default as Container } from './container/container';
 export { default as Footer } from './footer/footer';

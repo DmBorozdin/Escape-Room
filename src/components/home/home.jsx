@@ -5,9 +5,11 @@ import { useEffect } from 'react';
 import { fetchQuestList } from 'store/api-actions';
 import { getData } from 'store/selectors';
 import Preloader from 'components/common/preloader/preloader';
+import { TabList } from 'const';
+import { changeType } from 'store/action';
 
 const HomePage = () => {
-  const {isDataLoaded} = useSelector(getData);
+  const {isDataLoaded, selectedType} = useSelector(getData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,6 +17,14 @@ const HomePage = () => {
       dispatch(fetchQuestList());
     }
   }, [dispatch, isDataLoaded]);
+
+  useEffect(() => {
+    if (selectedType !== TabList.ALL.TYPE) {
+      dispatch(changeType(TabList.ALL.TYPE));
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   if (!isDataLoaded) {
     return (

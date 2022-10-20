@@ -4,16 +4,16 @@ import { useSelector } from 'react-redux';
 import Tabs from '../tabs/tabs';
 import * as S from './quests-catalog.styled';
 import { APPRoute, DifficultyLevel } from 'const';
-import { getData } from 'store/selectors';
+import { filterQuestsByType } from 'store/selectors';
 
 const QuestsCatalog = () => {
-  const {questList} = useSelector(getData);
+  const filteredQuestList = useSelector(filterQuestsByType);
 
   return (
     <>
       <Tabs />
       <S.QuestsList>
-        {questList.map((quest) => (
+        {filteredQuestList.map((quest) => (
           <S.QuestItem key={`quest-${quest.id}`}>
             <S.QuestItemLink to={`${APPRoute.QUEST}/${quest.id}`}>
               <S.Quest>

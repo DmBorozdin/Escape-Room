@@ -47,7 +47,7 @@ export const TabList = {
     ICON: () => (<IconAdventures />)
   },
   HORRORS: {
-    TYPE: `horrors`,
+    TYPE: `horror`,
     TITLE: `Ужасы`,
     ICON: () => (<IconHorrors />)
   },
