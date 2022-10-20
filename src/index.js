@@ -1,10 +1,11 @@
 import { StrictMode } from 'react';
-import { Provider } from 'react-redux';
+import { Router, Provider, configureStore } from 'components/common/common';
 import { render } from 'react-dom';
-import { configureStore } from '@reduxjs/toolkit';
 import { reducer } from 'store/reducer';
 import App from 'components/app/app';
 import { createApi } from 'services/api';
+import { redirect } from 'store/middlewares/redirect';
+import browserHistory from 'browser-history';
 
 const api = createApi();
 
@@ -15,13 +16,15 @@ const store = configureStore({
       thunk: {
         extraArgument: api
       },
-    })
+    }).concat(redirect)
 });
 
 render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <Router history={browserHistory}>
+        <App />
+      </Router>
     </Provider>
   </StrictMode>,
   document.getElementById('root'),
