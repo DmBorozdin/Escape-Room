@@ -82,3 +82,15 @@ export const PeopleCount = {
   MIN_NUMBER: 0,
   MAX_NUMBER: 1
 }
+
+export const Coordinates = {
+  CITY: {
+    LAT: 59.9684,
+    LNG: 30.317,
+    ZOOM: 16
+  },
+  POINT: {
+    LAT: 59.9682,
+    LNG: 30.3174,
+  }
+};

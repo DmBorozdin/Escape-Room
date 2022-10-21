@@ -1,6 +1,6 @@
 import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
-import contactsMap from 'assets/img/contacts-map.jpg';
 import * as S from './contacts.styled';
+import { ContactsMap } from './components/components';
 
 const Contacts = () => (
   <MainLayout>
@@ -18,7 +18,7 @@ const Contacts = () => (
               <S.ContactAddress>
                 Санкт-Петербург,
                 <br />
-                Набережная реки Карповка, д 5
+                Набережная реки Карповка, д 5П
               </S.ContactAddress>
             </S.ContactValue>
 
@@ -40,14 +40,7 @@ const Contacts = () => (
             </S.ContactValue>
           </S.ContactsList>
 
-          <S.ContactsMap>
-            <S.ContactsMapImage
-              src={contactsMap}
-              alt="мы находимся по адресу Санкт-Петербург, Набережная реки Карповка, д 5"
-              width="649"
-              height="336"
-            />
-          </S.ContactsMap>
+          <ContactsMap/>
         </S.Contacts>
       </S.ContentWrapper>
     </S.Main>
