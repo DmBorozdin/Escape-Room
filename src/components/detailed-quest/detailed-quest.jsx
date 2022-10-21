@@ -5,9 +5,9 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
-import { DifficultyLevel, TypeQuest } from 'const';
+import { DifficultyLevel, TypeQuest, PeopleCount } from 'const';
 import { getData } from 'store/selectors';
-import { fetchQuest } from 'store/api-actions';
+import { fetchQuest, sendApplication } from 'store/api-actions';
 import Preloader from 'components/common/preloader/preloader';
 
 const DetailedQuest = () => {
@@ -24,7 +24,11 @@ const DetailedQuest = () => {
   }, [dispatch, isOneQuestLoaded, pageId]);
 
   const onBookingBtnClick = () => {
-    setIsBookingModalOpened(true);
+    setIsBookingModalOpened(!isBookingModalOpened);
+  };
+
+  const onFormSubmit = (data) => {
+    dispatch(sendApplication(data, onBookingBtnClick));
   };
 
   if (!isOneQuestLoaded) {
@@ -58,7 +62,7 @@ const DetailedQuest = () => {
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPerson width="19" height="24" />
-                <S.FeatureTitle>{`${quest.peopleCount[0]}–${quest.peopleCount[1]} чел`}</S.FeatureTitle>
+                <S.FeatureTitle>{`${quest.peopleCount[PeopleCount.MIN_NUMBER]}–${quest.peopleCount[PeopleCount.MAX_NUMBER]} чел`}</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPuzzle width="24" height="24" />
@@ -76,7 +80,7 @@ const DetailedQuest = () => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {isBookingModalOpened && <BookingModal onCloseBtnClick={onBookingBtnClick} onFormSubmit={onFormSubmit}/>}
       </S.Main>
     </MainLayout>
   );

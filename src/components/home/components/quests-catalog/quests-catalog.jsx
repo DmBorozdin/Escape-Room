@@ -3,7 +3,7 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { useSelector } from 'react-redux';
 import Tabs from '../tabs/tabs';
 import * as S from './quests-catalog.styled';
-import { APPRoute, DifficultyLevel } from 'const';
+import { APPRoute, DifficultyLevel, PeopleCount } from 'const';
 import { filterQuestsByType } from 'store/selectors';
 
 const QuestsCatalog = () => {
@@ -30,7 +30,7 @@ const QuestsCatalog = () => {
                   <S.QuestFeatures>
                     <S.QuestFeatureItem>
                       <IconPerson />
-                      {`${quest.peopleCount[0]}–${quest.peopleCount[1]} чел`}
+                      {`${quest.peopleCount[PeopleCount.MIN_NUMBER]}–${quest.peopleCount[PeopleCount.MAX_NUMBER]} чел`}
                     </S.QuestFeatureItem>
                     <S.QuestFeatureItem>
                       <IconPuzzle />

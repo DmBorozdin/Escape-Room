@@ -67,3 +67,18 @@ export const TabList = {
     ICON: () => (<IconScifi />)
   }
 };
+
+export const BookingFormField = {
+  NAME: `booking-name`,
+  PHONE: `booking-phone`,
+  COUNT: `booking-people`,
+  LEGAL: `booking-legal`
+}
+
+export const CHECKBOX_CHECKED = `on`;
+export const TEL_LENGTH = 10;
+
+export const PeopleCount = {
+  MIN_NUMBER: 0,
+  MAX_NUMBER: 1
+}

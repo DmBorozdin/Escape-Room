@@ -18,3 +18,9 @@ export const fetchQuest = (id) => (dispatch, _getState, api) => (
       }
     })
 );
+
+export const sendApplication = (data, onBookingBtnClick) => (dispatch, _getState, api) => (
+  api.post(APIRoute.ORDER, data)
+    .then(() => onBookingBtnClick())
+    .catch((err) => {throw(err)})
+);
