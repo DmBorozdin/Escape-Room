@@ -3,13 +3,15 @@ import { QuestsCatalog } from './components/components';
 import * as S from './home.styled';
 import { useEffect } from 'react';
 import { fetchQuestList } from 'store/api-actions';
-import { getData } from 'store/selectors';
+import { getData } from 'store/quests-data/selectors';
+import { getType } from 'store/type/selectors';
 import Preloader from 'components/common/preloader/preloader';
 import { TabList } from 'const';
 import { changeType } from 'store/action';
 
 const HomePage = () => {
-  const {isDataLoaded, selectedType} = useSelector(getData);
+  const {isDataLoaded} = useSelector(getData);
+  const {selectedType} = useSelector(getType);
   const dispatch = useDispatch();
 
   useEffect(() => {

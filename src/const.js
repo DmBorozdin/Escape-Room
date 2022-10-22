@@ -105,9 +105,13 @@ export const BookingFormField = {
 }
 
 export const CHECKBOX_CHECKED = `on`;
-export const TEL_LENGTH = 10;
-export const PHONE_NUMBER = `8 (800) 333-55-99`
-export const FORMAT_PHONE_NUMBER = `88003335599`
+
+export const Phone = {
+  LENGTH: 10,
+  NUMBER: `8 (800) 333-55-99`,
+  NUMBER_IN_SECOND_FORMAT: `88003335599`,
+  FORMAT: '999 999 99 99'
+};
 
 export const PeopleCount = {
   MIN_NUMBER: 0,

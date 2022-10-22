@@ -6,7 +6,7 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
 import { DifficultyLevel, TypeQuest, PeopleCount, BlockSize } from 'const';
-import { getData } from 'store/selectors';
+import { getData } from 'store/quests-data/selectors';
 import { fetchQuest, sendApplication } from 'store/api-actions';
 import Preloader from 'components/common/preloader/preloader';
 

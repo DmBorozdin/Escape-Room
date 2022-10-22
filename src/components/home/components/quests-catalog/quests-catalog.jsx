@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Tabs from '../tabs/tabs';
 import * as S from './quests-catalog.styled';
 import { APPRoute, DifficultyLevel, PeopleCount, BlockSize } from 'const';
-import { filterQuestsByType } from 'store/selectors';
+import { filterQuestsByType } from 'store/quests-data/selectors';
 
 const QuestsCatalog = () => {
   const filteredQuestList = useSelector(filterQuestsByType);

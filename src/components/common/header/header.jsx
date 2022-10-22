@@ -1,6 +1,6 @@
 import logo from 'assets/img/logo.svg';
 import * as S from './header.styled';
-import { BlockSize, APPRoute, HeaderMenu, PHONE_NUMBER, FORMAT_PHONE_NUMBER } from 'const';
+import { BlockSize, APPRoute, HeaderMenu, Phone } from 'const';
 import { useLocation } from 'components/common/common';
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
 
           </S.Links>
         </S.Navigation>
-        <S.Phone href={`tel:${FORMAT_PHONE_NUMBER}`}>{PHONE_NUMBER}</S.Phone>
+        <S.Phone href={`tel:${Phone.NUMBER_IN_SECOND_FORMAT}`}>{Phone.NUMBER}</S.Phone>
       </S.HeaderWrapper>
     </S.StyledHeader>
   )

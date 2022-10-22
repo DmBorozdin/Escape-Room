@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import * as S from './booking-modal.styled';
 import PropTypes from 'prop-types';
-import { BookingFormField, CHECKBOX_CHECKED, TEL_LENGTH, BlockSize } from 'const';
+import { BookingFormField, CHECKBOX_CHECKED, Phone, BlockSize } from 'const';
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 
 const BookingModal = ({onCloseBtnClick, onFormSubmit}) => {
@@ -52,10 +52,10 @@ const BookingModal = ({onCloseBtnClick, onFormSubmit}) => {
               id="booking-phone"
               name="booking-phone"
               placeholder="Телефон"
-              pattern={`\\d{${TEL_LENGTH}}`}
-              title='999 999 99 99'
-              minLength={TEL_LENGTH}
-              maxLength={TEL_LENGTH}
+              pattern={`\\d{${Phone.LENGTH}}`}
+              title={Phone.FORMAT}
+              minLength={Phone.LENGTH}
+              maxLength={Phone.LENGTH}
               required
             />
           </S.BookingField>

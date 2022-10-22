@@ -1,11 +1,11 @@
 import {useSelector, useDispatch} from 'components/common/common';
-import { getData } from 'store/selectors';
+import { getType } from 'store/type/selectors';
 import { TabList } from 'const';
 import * as S from './tabs.styled';
 import { changeType } from 'store/action';
 
 const Tabs = () => {
-  const {selectedType} = useSelector(getData);
+  const {selectedType} = useSelector(getType);
   const dispatch = useDispatch();
 
   const onTabBtnClick = (evt) => {
