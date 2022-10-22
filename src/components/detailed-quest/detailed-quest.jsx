@@ -5,7 +5,7 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
-import { DifficultyLevel, TypeQuest, PeopleCount } from 'const';
+import { DifficultyLevel, TypeQuest, PeopleCount, BlockSize } from 'const';
 import { getData } from 'store/selectors';
 import { fetchQuest, sendApplication } from 'store/api-actions';
 import Preloader from 'components/common/preloader/preloader';
@@ -43,10 +43,10 @@ const DetailedQuest = () => {
     <MainLayout>
       <S.Main>
         <S.PageImage
-          src={quest.coverImg}
+          src={`/${quest.coverImg}`}
           alt={`Квест ${quest.title}`}
-          width="1366"
-          height="768"
+          width={BlockSize.PAGE_IMAGE.WIDTH}
+          height={BlockSize.PAGE_IMAGE.HEIGHT}
         />
         <S.PageContentWrapper>
           <S.PageHeading>
@@ -57,15 +57,15 @@ const DetailedQuest = () => {
           <S.PageDescription>
             <S.Features>
               <S.FeaturesItem>
-                <IconClock width="20" height="20" />
+                <IconClock width={BlockSize.ICON_BLOCK.WIDTH} height={BlockSize.ICON_BLOCK.WIDTH} />
                 <S.FeatureTitle>{`${quest.duration} мин`}</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
-                <IconPerson width="19" height="24" />
+                <IconPerson width={BlockSize.ICON_PERSON.WIDTH} height={BlockSize.ICON_PERSON.WIDTH} />
                 <S.FeatureTitle>{`${quest.peopleCount[PeopleCount.MIN_NUMBER]}–${quest.peopleCount[PeopleCount.MAX_NUMBER]} чел`}</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
-                <IconPuzzle width="24" height="24" />
+                <IconPuzzle width={BlockSize.ICON_PAZZLE.WIDTH} height={BlockSize.ICON_PAZZLE.WIDTH} />
                 <S.FeatureTitle>{DifficultyLevel[quest.level.toUpperCase()]}</S.FeatureTitle>
               </S.FeaturesItem>
             </S.Features>

@@ -3,7 +3,7 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { useSelector } from 'react-redux';
 import Tabs from '../tabs/tabs';
 import * as S from './quests-catalog.styled';
-import { APPRoute, DifficultyLevel, PeopleCount } from 'const';
+import { APPRoute, DifficultyLevel, PeopleCount, BlockSize } from 'const';
 import { filterQuestsByType } from 'store/selectors';
 
 const QuestsCatalog = () => {
@@ -19,8 +19,8 @@ const QuestsCatalog = () => {
               <S.Quest>
                 <S.QuestImage
                   src={quest.previewImg}
-                  width="344"
-                  height="232"
+                  width={BlockSize.QUEST_IMAGE.WIDTH}
+                  height={BlockSize.QUEST_IMAGE.HEIGHT}
                   alt={`квест ${quest.title}`}
                 />
 

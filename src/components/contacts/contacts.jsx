@@ -1,6 +1,7 @@
 import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
 import * as S from './contacts.styled';
 import { ContactsMap } from './components/components';
+import { PHONE_NUMBER, FORMAT_PHONE_NUMBER } from 'const';
 
 const Contacts = () => (
   <MainLayout>
@@ -27,8 +28,8 @@ const Contacts = () => (
 
             <S.ContactTitle>Телефон</S.ContactTitle>
             <S.ContactValue>
-              <S.ContactLink href="tel:8 (800) 333-55-99">
-                8 (800) 333-55-99
+              <S.ContactLink href={`tel:${FORMAT_PHONE_NUMBER}`}>
+                {PHONE_NUMBER}
               </S.ContactLink>
             </S.ContactValue>
 

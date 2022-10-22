@@ -10,11 +10,40 @@ export const APPRoute = {
   QUEST: `/detailed-quest`,
   ID: `/:id`,
   CONTACTS: `/contacts`,
+  STUB: `#`,
 };
 
 export const APIRoute = {
   QUESTS: `/quests`,
   ORDER: `/orders`
+};
+
+export const HeaderMenu = {
+  QUESTS: {
+    ITEM: `quests`,
+    TITLE: `Квесты`,
+    ROUTE: `/`,
+  },
+  BEGINNER: {
+    ITEM: `befinner`,
+    TITLE: `Новичкам`,
+    ROUTE: `#`,
+  },
+  REVIEWS: {
+    ITEM: `reviews`,
+    TITLE: `Отзывы`,
+    ROUTE: `#`,
+  },
+  SALES: {
+    ITEM: `sales`,
+    TITLE: `Акции`,
+    ROUTE: `#`,
+  },
+  CONTACTS: {
+    ITEM: `contacts`,
+    TITLE: `Контакты`,
+    ROUTE: `/contacts`,
+  },
 };
 
 export const DifficultyLevel = {
@@ -77,6 +106,8 @@ export const BookingFormField = {
 
 export const CHECKBOX_CHECKED = `on`;
 export const TEL_LENGTH = 10;
+export const PHONE_NUMBER = `8 (800) 333-55-99`
+export const FORMAT_PHONE_NUMBER = `88003335599`
 
 export const PeopleCount = {
   MIN_NUMBER: 0,
@@ -94,3 +125,34 @@ export const Coordinates = {
     LNG: 30.3174,
   }
 };
+
+export const BlockSize = {
+  PAGE_IMAGE: {
+    WIDTH: 1366,
+    HEIGHT: 768
+  },
+  QUEST_IMAGE: {
+    WIDTH: 344,
+    HEIGHT: 232
+  },
+  ICON_BLOCK: {
+    WIDTH: 20,
+    HEIGHT: 20
+  },
+  ICON_PERSON: {
+    WIDTH: 19,
+    HEIGHT: 24
+  },
+  ICON_PAZZLE: {
+    WIDTH: 24,
+    HEIGHT: 24
+  },
+  LOGO: {
+    WIDTH: 134,
+    HEIGHT: 50
+  },
+  ICON_CLOSE: {
+    WIDTH: 16,
+    HEIGHT: 16
+  },
+}

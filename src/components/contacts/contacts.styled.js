@@ -37,7 +37,7 @@ const Contacts = styled.div`
 `;
 
 const ContactsList = styled.dl`
-  width: 233px;
+  width: 244px;
   margin: 0;
   margin-left: 30px;
   padding: 0;

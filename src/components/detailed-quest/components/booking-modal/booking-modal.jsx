@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 import * as S from './booking-modal.styled';
 import PropTypes from 'prop-types';
-import { BookingFormField, CHECKBOX_CHECKED, TEL_LENGTH } from 'const';
-
+import { BookingFormField, CHECKBOX_CHECKED, TEL_LENGTH, BlockSize } from 'const';
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 
 const BookingModal = ({onCloseBtnClick, onFormSubmit}) => {
@@ -19,19 +18,13 @@ const BookingModal = ({onCloseBtnClick, onFormSubmit}) => {
       phone: formData.get(BookingFormField.PHONE),
       isLegal: formData.get(BookingFormField.LEGAL) === CHECKBOX_CHECKED
     });
-    console.log({
-      name: formData.get(BookingFormField.NAME),
-      peopleCount: Number(formData.get(BookingFormField.COUNT)),
-      phone: formData.get(BookingFormField.PHONE),
-      isLegal: formData.get(BookingFormField.LEGAL) === CHECKBOX_CHECKED
-    })
   };
 
   return (
     <S.BlockLayer>
       <S.Modal>
         <S.ModalCloseBtn onClick={handleCloseBtnClick}>
-          <IconClose width="16" height="16" />
+          <IconClose width={BlockSize.ICON_BLOCK.WIDTH} height={BlockSize.ICON_BLOCK.HEIGHT} />
           <S.ModalCloseLabel>Закрыть окно</S.ModalCloseLabel>
         </S.ModalCloseBtn>
         <S.ModalTitle>Оставить заявку</S.ModalTitle>
